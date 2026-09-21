@@ -26,6 +26,24 @@ if (navToggle && navLinks) {
   });
 }
 
+// Sessions carousel controls
+document.querySelectorAll('.carousel').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  const scrollByAmount = () => {
+    const item = track.querySelector('.session-item');
+    const itemWidth = item ? item.getBoundingClientRect().width + 12 : 200;
+    return itemWidth * 3;
+  };
+  prevBtn?.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+  });
+  nextBtn?.addEventListener('click', () => {
+    track.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+  });
+});
+
 // Scroll-reveal animations
 const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
 if ('IntersectionObserver' in window && revealTargets.length) {
