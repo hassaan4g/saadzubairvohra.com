@@ -398,22 +398,6 @@ nav.links a:hover::after { right: 0; }
   font-weight: 600;
   color: var(--navy);
 }
-.cert-card.text-only {
-  border-left: 4px solid var(--accent);
-  text-align: left;
-  padding: 18px 20px;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--navy);
-}
-.cert-card.text-only span {
-  display: block;
-  font-weight: 400;
-  color: var(--muted);
-  font-size: 0.84rem;
-  margin-top: 4px;
-}
-
 /* Achievements */
 .achieve-grid {
   display: grid;
