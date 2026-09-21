@@ -36,7 +36,7 @@ if ('IntersectionObserver' in window && revealTargets.length) {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
   revealTargets.forEach((el) => revealObserver.observe(el));
 } else {
   revealTargets.forEach((el) => el.classList.add('in-view'));
@@ -108,11 +108,12 @@ if ('IntersectionObserver' in window && statNumbers.length) {
   const selectors = [
     '.cert-card .cert-img-wrap img',
     '.achieve-card .cert-img-wrap img',
-    '.photo-card img'
+    '.photo-card img',
+    '.session-item img'
   ];
   document.querySelectorAll(selectors.join(',')).forEach((img) => {
     img.addEventListener('click', () => {
-      const caption = img.closest('.cert-card, .achieve-card, .photo-card')
+      const caption = img.closest('.cert-card, .achieve-card, .photo-card, .session-item')
         ?.querySelector('.cert-label, .photo-caption')?.textContent || img.alt;
       openLightbox(img.src, img.alt, caption);
     });
