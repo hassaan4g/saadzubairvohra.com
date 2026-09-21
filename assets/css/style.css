@@ -284,6 +284,85 @@ nav.links a:hover::after { right: 0; }
 .service-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
 .service-card p { color: var(--muted); font-size: 0.9rem; }
 
+/* Courses */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 860px) { .courses-grid { grid-template-columns: 1fr; } }
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.course-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(11,37,69,0.12); }
+.course-badge {
+  align-self: flex-start;
+  background: rgba(44, 160, 28, 0.1);
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.course-card h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.course-card p { color: var(--muted); font-size: 0.9rem; flex-grow: 1; margin-bottom: 20px; }
+.course-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.course-actions .btn { padding: 10px 16px; font-size: 0.86rem; }
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+.btn-ghost-dark:hover { background: var(--bg); border-color: var(--navy-light); }
+.courses-footnote {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 28px;
+}
+
+/* Video */
+.video-frame { max-width: 860px; margin: 0 auto; }
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #cfe3f7;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+.video-placeholder .play-btn {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.video-placeholder .play-btn svg { margin-left: 3px; }
+.video-frame:hover .play-btn { transform: scale(1.08); background: rgba(255,255,255,0.22); }
+.video-frame iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 16px;
+}
+
 /* Certifications */
 .cert-grid {
   display: grid;
